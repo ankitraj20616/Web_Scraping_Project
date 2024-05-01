@@ -37,6 +37,7 @@ class Game:
 
 
             for quote in all_quotes:
+                print("Here is the Quote:- ")
                 print(quote["text"])
                 name = input("Guess The author name:-")
                 if name == quote["author"]:
@@ -46,6 +47,15 @@ class Game:
                     print("OOPs!...Try again...")
             try:
                 page_url = soup.find(class_="next").find("a")["href"]
+                print("Wana play More:- Y/N")
+                x = input()
+                if x != "Y" and x != "N":
+                    print("Please enter the correct input:-Y/N")
+                    x = input()
+                if x == "N":
+                    print("Okiee Fine Don't Play..")
+                    return
+
             except:
                 print("OPPS! No more Quotes!")
                 break
